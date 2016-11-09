@@ -12,7 +12,7 @@ public class Connect {
     private Connection con;
     private Statement stmt;
     private final String USER="neo4j";
-    private final String PASSWORD= "Monito96";
+    private final String PASSWORD= "Db9296cfd2";
     static final String  _URL = "jdbc:neo4j:bolt://localhost";
 
     //constructor
@@ -27,39 +27,39 @@ public class Connect {
     }
 
     //Execute a query
-    public ResultSet executeQuery(String query){
-        ResultSet resultado = null;
+    public newResultSet executeQuery(String query){
+        newResultSet newResultado = null;
         try{
-            resultado = stmt.executeQuery(query);
+            newResultado = stmt.executeQuery(query);
         }catch(SQLException e){
             System.out.println("Error");
         }
-        return resultado;
+        return newResultado;
 
     }
-    //See in an specific table the results
-    public ResultSet getQuery(String _query){
+    //See in an specific table the newResults
+    public newResultSet getQuery(String _query){
         Statement state = null;
-        ResultSet resultado = null;
+        newResultSet newResultado = null;
         try{
             state = (Statement) con.createStatement();
-            resultado = state.executeQuery(_query);
+            newResultado = state.executeQuery(_query);
         }
         catch(SQLException e)
         {
             e.printStackTrace();
 
         }
-        return resultado;
+        return newResultado;
     }
     //History of queries
-    public String History(ResultSet result){
-        String cadena ="";
+    public String History(newResultSet newResult){
+        String stringArray ="";
 
         try {
 
-            while(result.next()){
-                cadena += result.getString("n.name")+"\n";
+            while(newResult.next()){
+                stringArray += newResult.getString("n.name")+"\n";
 
             }
         }
@@ -70,7 +70,7 @@ public class Connect {
         catch(NullPointerException  e1){
 
         }
-        return cadena;
+        return stringArray;
 
     }
     public void insert(String node,String id){
@@ -97,7 +97,7 @@ public class Connect {
             e.printStackTrace();
         }
     }
-    public void simplificar(){
+    public void simplifying(){
 
 
     }

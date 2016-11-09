@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 public class Main {
     public static void main (String [] args){
         try {
-            Connection con = DriverManager.getConnection("jdbc:neo4j:bolt://localhost", "neo4j", "Monito96");
+            Connection con = DriverManager.getConnection("jdbc:neo4j:bolt://localhost", "neo4j", "Db9296cfd2");
             try (Statement stmt = con.createStatement()) {
                 ResultSet rs = stmt.executeQuery("MATCH (n:User) RETURN n.name");
                 while (rs.next()) {
@@ -25,7 +25,7 @@ public class Main {
 
             Graph graph = new SingleGraph("Pruebas");
             Node[] nodos = new Node [14];
-            String[] names = {"Goff", "Golden", "Tracey", "Emma", "Billy", "Jason", "Ryan", "Carl", "Wizzi", "Old", "Carol", "Cesar", "Ricardo", "Richard"};
+            String[] names = {"Alpha", "Bravo", "Charlie", "Delta", "Echoe", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November"};
 
             for(int i = 0; i < 14; i++){
                 graph.addNode(names[i]);
